@@ -116,7 +116,6 @@ class App extends React.Component {
        <Router>
                   <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
                   <Middle data={this.state.data} />  
-                  <Details data = {this.state.data} />
                   <Footer days ={this.state.days}/>
                   
       </Router>
