@@ -5,10 +5,11 @@ const Middle = (props) => {
         <div className ="container1">
             <div className="middle">
             <h1>{props.data.city},{props.data.country}</h1>
-              <h5>Wind {props.data.wind} </h5>
+            {/* <h5>Wind {props.data.wind} </h5> */}
+            <h3> {props.data.description} </h3> 
+          <img className="mainIcon" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/>
            <h1 className="middle">{props.data.temp}&deg;</h1>
            {maxminTemp(props.data.temp_min,props.data.temp_max)}
-           <button>click me</button>
          </div>
         </div>
     );

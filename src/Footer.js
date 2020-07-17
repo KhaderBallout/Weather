@@ -5,11 +5,17 @@ const Footer = (props) => {
     return(
         <div className ="footer">
             <div className="day">{props.days.day1}
-            <p>{props.days.temp1}</p></div>
-            <div className="day">{props.days.day2}</div>
-            <div className="day">{props.days.day3}</div>
-            <div className="day">{props.days.day4}</div>
-            <div className="day">{props.days.day5}</div>
+            <p>{props.days.temp1}</p>
+            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/>
+            </div>
+            <div className="day">{props.days.day2}    <p>{props.days.temp1}</p>
+            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
+            <div className="day">{props.days.day3}   <p>{props.days.temp1}</p>
+            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
+            <div className="day">{props.days.day4}   <p>{props.days.temp1}</p>
+            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
+            <div className="day">{props.days.day5}   <p>{props.days.temp1}</p>
+            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
         </div>
     );
 }

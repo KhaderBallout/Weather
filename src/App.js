@@ -12,7 +12,7 @@ import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-route
 const API = "0159e74a618b489bf8a7d85490c7e5f3";
 class App extends React.Component {
 
-  state = {
+    state = {
     coords:{
       lat:40,
       lon:60
@@ -20,7 +20,8 @@ class App extends React.Component {
     data:{
     },
     days:{
-
+    },
+    iconsObj:{
     },
     inputData: "",
     curTime : new Date().toLocaleString()
@@ -36,14 +37,14 @@ class App extends React.Component {
       // api call
       Axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.state.coords.lat}&lon=${this.state.coords.lon}&appid=${API}`).then(res => {
       console.log(res);
-    let weatherData = {
+       let weatherData = {
         city:res.data.city.name,
         country:res.data.city.country,
         temp:this.calCelsius(res.data.list[0].main.temp),
         temp_max:this.calCelsius(res.data.list[0].main.temp_max),
         temp_min:this.calCelsius(res.data.list[0].main.temp_min),
         wind:res.data.list[0].wind.speed,
-        //icon:res.data.weather[0].icon
+        description:res.data.list[0].weather[0].description,
       }
       let dayDate ={
         day1:res.data.list[0].dt_txt,
@@ -57,9 +58,15 @@ class App extends React.Component {
         day5:res.data.list[32].dt_txt,
         temp5:res.data.list[32].main.temp,
       }
+      let iconsWeather ={
+        icons:res.data.list[0].weather[0].icon,
+
+      }
+
       
       this.setState({data:weatherData});
       this.setState({days:dayDate});
+      this.setState({iconsObj: iconsWeather})
       //console.log(this.state.data.icon);
 
       }) 
@@ -88,6 +95,8 @@ class App extends React.Component {
         temp:this.calCelsius(res.data.list[0].main.temp),
         temp_max:this.calCelsius(res.data.list[0].main.temp_max),
         temp_min:this.calCelsius(res.data.list[0].main.temp_min),
+        description:res.data.list[0].weather[0].description,
+        
         
       }
       let dayDate ={
@@ -102,8 +111,13 @@ class App extends React.Component {
         day5:res.data.list[32].dt_txt,
         temp5:res.data.list[32].main.temp,
       }
+      let iconsWeather ={
+        icons:res.data.list[0].weather[0].icon,
+      }
       this.setState({ data: userWeather });
       this.setState({days:dayDate});
+      this.setState({iconsObj: iconsWeather})
+
 
 
     })
@@ -115,9 +129,9 @@ class App extends React.Component {
      <div>
        <Router>
                   <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
-                  <Middle data={this.state.data} />  
-                  <Details data = {this.state.data} />
-                  <Footer days ={this.state.days}/>
+                  <Middle data={this.state.data} iconsObj= {this.state.iconsObj}/>  
+                 {/* /* <Details data = {this.state.data} /> */} 
+                  <Footer days ={this.state.days} iconsObj= {this.state.iconsObj}/>
                   
       </Router>
     </div>
