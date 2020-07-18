@@ -110,20 +110,19 @@ class App extends React.Component {
   }
 
   render() {
-    let that = this.state
+
     return (
       <Router>
         <div className="App">
           <div>
-          <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
+            <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
             <Route exact path="/" render={props => (<React.Fragment>
               <Middle data={this.state.data} />
               <Footer days={this.state.days} />
             </React.Fragment>)} />
             <Route exact apath='/details' render={props => (<React.Fragment>
-              <Details data={that.data} />
+              <Details data={this.state.data} />
             </React.Fragment>)} />
-
 
           </div>
         </div>
