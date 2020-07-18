@@ -1,10 +1,5 @@
 ## React Weather
-A simple weather app built with React framework
-
-## Note About API
-Note about API data
-The weather data retrived from Open Weather is not very accurate. Most of the time, the weather forecast is not correct.
-
+A simple weather app built with React framework.
 
 ## Instructions
 
@@ -24,11 +19,11 @@ $ npm start # or yarn start
 ```
 
 ## Description
-This is a simple react weather app using openweathermap API.
+This is a simple react weather app that shows the current weather and the weather for 5 days with details using OpenWeatherMap API.
 
 
 ##Features Implemented:
-1)Showing Today Weather.
+1)Showing Today's Weather.
 2)Showing 5 days Weather Forecast.
 The Component development is in progress and will contain more features in the future versions.
 
