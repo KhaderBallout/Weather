@@ -37,5 +37,5 @@ Project uses:
 * React
 * Styled Component
 
-##Contribution
+## Contribution
 If you want to contribute to the project and make it better, your help is very welcome, create a pull request with your suggested feature/bug fix/ enhancements.
