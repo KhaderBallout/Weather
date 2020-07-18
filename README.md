@@ -2,7 +2,7 @@
 
 First clone this repository.
 ```bash
-$ git clone 
+$ git clone https://github.com/KhaderBallout/Weather.git
 ```
 
 Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/) installed in your system.
@@ -16,7 +16,7 @@ $ npm start # or yarn start
 ```
 
 ## Description
-This is a simple react weather app using OpenWeatherMap API.
+This is a simple react weather app using openweathermap API.
  
 ## Technologies
 Project uses:
