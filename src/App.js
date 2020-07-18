@@ -50,6 +50,7 @@ class App extends React.Component {
         Feels_Like:this.calCelsius(res.data.list[0].main.feels_like) ,
         Sea_Level:res.data.list[0].main.sea_level,
         description:res.data.list[0].weather[0].description,
+        population:res.data.city.population
       }
       let dayDate ={
         day1:res.data.list[0].dt_txt,
@@ -108,6 +109,7 @@ class App extends React.Component {
         Feels_Like:this.calCelsius(res.data.list[0].main.feels_like) ,
         Sea_Level:res.data.list[0].main.sea_level,
         description:res.data.list[0].weather[0].description,
+        population:res.data.city.population
         
       }
       let dayDate ={
@@ -144,7 +146,7 @@ class App extends React.Component {
           <div>
             <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
             <Route exact path="/" render={props => (<React.Fragment>
-              <Middle data={this.state.data} />
+              <Middle data={this.state.data} iconsObj = {that.iconsObj} />
               <Footer days={this.state.days} iconsObj = {this.state.iconsObj}  />
             </React.Fragment>)} />
             <Route exact path='/details' render={props => (<React.Fragment>

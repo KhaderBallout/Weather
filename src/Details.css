@@ -1,8 +1,5 @@
 .details {
     text-align: center;
-    background-image: url("/sky.jpg");
-    background-repeat: no-repeat;
-    min-height: 100vh;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -13,28 +10,22 @@
   }
   
 .details img{
-    padding-left: 400px;
+    padding-left: 0px;
     padding-top: 3px;
     margin: 0px;
+    height: 100px;
+    width: 100px;
 }
 
 .text{
     display: block;
     width: 700px;
     font-family: cursive;
+    margin-top: 10px;
 }
 .city{
     margin: 0px;
     display: block;
     font-size: 40px;
     font-family: cursive;
-}
-.desci{
-    font-size: 25px;
-    color: rgb(247, 141, 65);
-}
-.temp{
-    padding: 0px;
-    font-size: 25px;
-    color: rgb(240, 162, 17);
 }
