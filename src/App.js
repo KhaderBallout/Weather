@@ -6,7 +6,7 @@ import Middle from './Middle.js';
 import Footer from './Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Details from './Details.js';
-//import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
 
 
 const API = "0159e74a618b489bf8a7d85490c7e5f3";
@@ -137,16 +137,23 @@ class App extends React.Component {
   }
 
   render(){
+    let that = this.state;
   return (
-    <div className="App">
-     <div>
-                  <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
-                  <Details data={this.state.data} iconsObj= {this.state.iconsObj}/>  
-                  <Footer days ={this.state.days} iconsObj= {this.state.iconsObj}/>
-                  
+    <Router>
+        <div className="App">
+          <div>
+            <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
+            <Route exact path="/" render={props => (<React.Fragment>
+              <Middle data={this.state.data} />
+              <Footer days={this.state.days} iconsObj = {this.state.iconsObj}  />
+            </React.Fragment>)} />
+            <Route exact path='/details' render={props => (<React.Fragment>
+              <Details data={that.data} iconsObj = {that.iconsObj} />
+            </React.Fragment>)} />
 
-    </div>
-    </div>
+          </div>
+        </div>
+      </Router>
   );
   }
 }
