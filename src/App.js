@@ -131,9 +131,6 @@ class App extends React.Component {
         icons4:res.data.list[24].weather[0].icon,
         icons5:res.data.list[32].weather[0].icon,
       }
-      let iconsWeather ={
-        icons:res.data.list[0].weather[0].icon,
-      }
       this.setState({ data: userWeather });
       this.setState({days:dayDate});
       this.setState({iconsObj: iconsWeather});
@@ -142,16 +139,23 @@ class App extends React.Component {
   }
 
   render(){
+    let that = this.state;
   return (
-    <div className="App">
-     <div>
-                  <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
-                  <Details data={this.state.data} iconsObj= {this.state.iconsObj}/>  
-                  <Footer days ={this.state.days} iconsObj= {this.state.iconsObj}/>
-                  
+    <Router>
+        <div className="App">
+          <div>
+            <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
+            <Route exact path="/" render={props => (<React.Fragment>
+              <Middle data={this.state.data} />
+              <Footer days={this.state.days} iconsObj = {this.state.iconsObj}  />
+            </React.Fragment>)} />
+            <Route exact path='/details' render={props => (<React.Fragment>
+              <Details data={that.data} iconsObj = {that.iconsObj} />
+            </React.Fragment>)} />
 
-    </div>
-    </div>
+          </div>
+        </div>
+      </Router>
   );
   }
 }

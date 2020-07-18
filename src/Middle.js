@@ -1,15 +1,23 @@
 import React from 'react'
 
 const Middle = (props) => {
+  console.log(props);
+  
     return (
         <div className ="container1">
             <div className="middle">
             <h1>{props.data.city},{props.data.country}</h1>
+<<<<<<< HEAD
             {/* <h5>Wind {props.data.wind} </h5> */}
             <h3> {props.data.description} </h3> 
           <img className="mainIcon" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/>
            <h1 className="middle">{props.data.temp}&deg;</h1>
            {maxminTemp(props.data.temp_min,props.data.temp_max)}
+=======
+           <h1 className="middle">{props.data.temp}&deg;</h1>
+           {maxminTemp(props.data.temp_min,props.data.temp_max)}
+           
+>>>>>>> def7ca36fbbb7528fd17d9149adaa48a30723bd4
          </div>
         </div>
     );

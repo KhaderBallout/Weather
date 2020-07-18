@@ -12,9 +12,9 @@
   height: 20vh;
 }
 .info{
-  margin-top: 10px;
+
   display: inline-block;
-  width: 300px;
+  width: 270px;
   height: 50vh;
   margin-left: 50px;
 }
@@ -28,6 +28,7 @@
 .container1{
   text-align: center;
   justify-content: center;
+  font-size: xx-large;
   
 }
 .middle{
@@ -46,17 +47,17 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 150px;
+  height: 100px;
   
 }
 
 .day{
   display: inline-block;
   width: 20%;
-  height: 150px;
+  height: 100px;
   text-align: center;
   justify-content: center;
-  border-right: 2px solid aqua;
-  border-top: 2px solid aqua;
+  border-right: 2px solid gray;
+  
 }
 
