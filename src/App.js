@@ -6,7 +6,7 @@ import Middle from './Middle.js';
 import Footer from './Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Details from './Details.js';
-import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
+//import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
 
 
 const API = "0159e74a618b489bf8a7d85490c7e5f3";
@@ -18,6 +18,8 @@ class App extends React.Component {
       lon:60
     },
     data:{
+    },
+    iconsObj:{
     },
     days:{
     },
@@ -36,34 +38,41 @@ class App extends React.Component {
       this.setState({coords:newCoords});
       // api call
       Axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.state.coords.lat}&lon=${this.state.coords.lon}&appid=${API}`).then(res => {
-      console.log(res);
-       let weatherData = {
+      console.log("main",res);
+    let weatherData = {
         city:res.data.city.name,
         country:res.data.city.country,
         temp:this.calCelsius(res.data.list[0].main.temp),
         temp_max:this.calCelsius(res.data.list[0].main.temp_max),
         temp_min:this.calCelsius(res.data.list[0].main.temp_min),
         wind:res.data.list[0].wind.speed,
+        Humidity:res.data.list[0].main.humidity,
+        Pressure:res.data.list[0].main.pressure,
+        Feels_Like:this.calCelsius(res.data.list[0].main.feels_like) ,
+        Sea_Level:res.data.list[0].main.sea_level,
         description:res.data.list[0].weather[0].description,
       }
       let dayDate ={
         day1:res.data.list[0].dt_txt,
-        temp1:res.data.list[0].main.temp,
+        temp1:this.calCelsius(res.data.list[0].main.temp),
         day2:res.data.list[8].dt_txt,
-        temp2:res.data.list[8].main.temp,
+        temp2:this.calCelsius(res.data.list[8].main.temp),
         day3:res.data.list[16].dt_txt,
-        temp3:res.data.list[16].main.temp,
+        temp3:this.calCelsius(res.data.list[16].main.temp),
         day4:res.data.list[24].dt_txt,
-        temp4:res.data.list[24].main.temp,
+        temp4:this.calCelsius(res.data.list[24].main.temp),
         day5:res.data.list[32].dt_txt,
-        temp5:res.data.list[32].main.temp,
+        temp5:this.calCelsius(res.data.list[32].main.temp),
       }
       let iconsWeather ={
-        icons:res.data.list[0].weather[0].icon,
+        icons1:res.data.list[0].weather[0].icon,
+        icons2:res.data.list[8].weather[0].icon,
+        icons3:res.data.list[16].weather[0].icon,
+        icons4:res.data.list[24].weather[0].icon,
+        icons5:res.data.list[32].weather[0].icon,
 
       }
-
-      
+      this.setState({iconsObj: iconsWeather});
       this.setState({data:weatherData});
       this.setState({days:dayDate});
       this.setState({iconsObj: iconsWeather})
@@ -95,30 +104,39 @@ class App extends React.Component {
         temp:this.calCelsius(res.data.list[0].main.temp),
         temp_max:this.calCelsius(res.data.list[0].main.temp_max),
         temp_min:this.calCelsius(res.data.list[0].main.temp_min),
+        wind:res.data.list[0].wind.speed,
+        Humidity:res.data.list[0].main.humidity,
+        Pressure:res.data.list[0].main.pressure,
+        Feels_Like:this.calCelsius(res.data.list[0].main.feels_like) ,
+        Sea_Level:res.data.list[0].main.sea_level,
         description:res.data.list[0].weather[0].description,
-        
         
       }
       let dayDate ={
         day1:res.data.list[0].dt_txt,
-        temp1:res.data.list[0].main.temp,
+        temp1:this.calCelsius(res.data.list[0].main.temp),
         day2:res.data.list[8].dt_txt,
-        temp2:res.data.list[8].main.temp,
+        temp2:this.calCelsius(res.data.list[8].main.temp),
         day3:res.data.list[16].dt_txt,
-        temp3:res.data.list[16].main.temp,
+        temp3:this.calCelsius(res.data.list[16].main.temp),
         day4:res.data.list[24].dt_txt,
-        temp4:res.data.list[24].main.temp,
+        temp4:this.calCelsius(res.data.list[24].main.temp),
         day5:res.data.list[32].dt_txt,
-        temp5:res.data.list[32].main.temp,
+        temp5:this.calCelsius(res.data.list[32].main.temp),
+      }
+      let iconsWeather ={
+        icons1:res.data.list[0].weather[0].icon,
+        icons2:res.data.list[8].weather[0].icon,
+        icons3:res.data.list[16].weather[0].icon,
+        icons4:res.data.list[24].weather[0].icon,
+        icons5:res.data.list[32].weather[0].icon,
       }
       let iconsWeather ={
         icons:res.data.list[0].weather[0].icon,
       }
       this.setState({ data: userWeather });
       this.setState({days:dayDate});
-      this.setState({iconsObj: iconsWeather})
-
-
+      this.setState({iconsObj: iconsWeather});
 
     })
   }
@@ -127,13 +145,11 @@ class App extends React.Component {
   return (
     <div className="App">
      <div>
-       <Router>
                   <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
-                  <Middle data={this.state.data} iconsObj= {this.state.iconsObj}/>  
-                 {/* /* <Details data = {this.state.data} /> */} 
+                  <Details data={this.state.data} iconsObj= {this.state.iconsObj}/>  
                   <Footer days ={this.state.days} iconsObj= {this.state.iconsObj}/>
                   
-      </Router>
+
     </div>
     </div>
   );
