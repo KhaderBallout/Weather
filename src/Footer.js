@@ -1,23 +1,11 @@
 import React from 'react';
+import "./footer.css"
 
 const Footer = (props) => {
     console.log("footer",props);
     return(
         <div className ="footer">
             <div className="day">{props.days.day1}
-<<<<<<< HEAD
-            <p>{props.days.temp1}</p>
-            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/>
-            </div>
-            <div className="day">{props.days.day2}    <p>{props.days.temp1}</p>
-            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
-            <div className="day">{props.days.day3}   <p>{props.days.temp1}</p>
-            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
-            <div className="day">{props.days.day4}   <p>{props.days.temp1}</p>
-            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
-            <div className="day">{props.days.day5}   <p>{props.days.temp1}</p>
-            <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons}.png`}/></div>
-=======
             <p>{props.days.temp1}&deg;</p>
             <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons1}.png`}/>
             </div>
@@ -37,7 +25,6 @@ const Footer = (props) => {
             <p>{props.days.temp5}&deg;</p>
             <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.iconsObj.icons5}.png`}/>
             </div>
->>>>>>> def7ca36fbbb7528fd17d9149adaa48a30723bd4
         </div>
     );
 }

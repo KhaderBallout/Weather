@@ -6,7 +6,7 @@ import Middle from './Middle.js';
 import Footer from './Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Details from './Details.js';
-//import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
 
 
 const API = "0159e74a618b489bf8a7d85490c7e5f3";
@@ -27,6 +27,7 @@ class App extends React.Component {
     },
     inputData: "",
     curTime : new Date().toLocaleString()
+    
   }
   componentDidMount() { // get device location
     if(navigator.geolocation){
@@ -39,7 +40,7 @@ class App extends React.Component {
       // api call
       Axios.get(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.state.coords.lat}&lon=${this.state.coords.lon}&appid=${API}`).then(res => {
       console.log("main",res);
-    let weatherData = {
+       let weatherData = {
         city:res.data.city.name,
         country:res.data.city.country,
         temp:this.calCelsius(res.data.list[0].main.temp),
@@ -51,6 +52,8 @@ class App extends React.Component {
         Feels_Like:this.calCelsius(res.data.list[0].main.feels_like) ,
         Sea_Level:res.data.list[0].main.sea_level,
         description:res.data.list[0].weather[0].description,
+        wind: res.data.list[0].wind.speed,
+        population:res.data.city.population,
       }
       let dayDate ={
         day1:res.data.list[0].dt_txt,
@@ -76,7 +79,6 @@ class App extends React.Component {
       this.setState({data:weatherData});
       this.setState({days:dayDate});
       this.setState({iconsObj: iconsWeather})
-      //console.log(this.state.data.icon);
 
       }) 
   })
@@ -110,7 +112,8 @@ class App extends React.Component {
         Feels_Like:this.calCelsius(res.data.list[0].main.feels_like) ,
         Sea_Level:res.data.list[0].main.sea_level,
         description:res.data.list[0].weather[0].description,
-        
+        wind: res.data.list[0].wind.speed,
+        population:res.data.city.population,
       }
       let dayDate ={
         day1:res.data.list[0].dt_txt,
@@ -146,10 +149,10 @@ class App extends React.Component {
           <div>
             <Header changeRegion={this.changeRegion} changeLocation={this.changeLocation} curTime={this.state.curTime} />
             <Route exact path="/" render={props => (<React.Fragment>
-              <Middle data={this.state.data} />
+              <Middle data={this.state.data} iconsObj = {this.state.iconsObj} />
               <Footer days={this.state.days} iconsObj = {this.state.iconsObj}  />
-            </React.Fragment>)} />
-            <Route exact path='/details' render={props => (<React.Fragment>
+             </React.Fragment>)} />
+             <Route exact path='/details' render={props => (<React.Fragment>
               <Details data={that.data} iconsObj = {that.iconsObj} />
             </React.Fragment>)} />
 
