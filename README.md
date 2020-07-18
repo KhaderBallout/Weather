@@ -1,7 +1,7 @@
-##React Weather
+## React Weather
 A simple weather app built with React framework
 
-##Note About API
+## Note About API
 Note about API data
 The weather data retrived from Open Weather is not very accurate. Most of the time, the weather forecast is not correct.
 
