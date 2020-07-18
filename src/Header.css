@@ -1,0 +1,59 @@
+.container{
+    width: 100%;
+    height: 15vh;
+    text-align: center;
+    justify-content: center;
+  }
+  .title{
+    display: inline-block;
+    position: absolute;
+    left:40%;
+    margin-top: 5px;   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(14, 12, 12);
+    font-size: 100px ;
+
+  }
+  .date{
+    display: inline-block;
+    position: absolute;
+    left:4%;
+    margin-top: 20px;
+    font-size: 100px ;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-weight: 400 ;
+
+  }
+    
+  .search{
+    display: inline-block;
+    margin-left: 50px;
+    position: absolute;
+    left: 68%;
+    margin-top: 15px;
+  }
+  .regionInput{
+    background:none;
+    border:none;
+    border-bottom:1px solid #fff;  
+    color: white;
+    outline: none;
+  }
+  ::placeholder {
+    color: rgb(181, 194, 235);
+    opacity: 1;
+  }
+  
+  .link1{
+    display: inline-block;
+    margin-top: 25px;
+    position: absolute;
+    left: 88%;
+  }
+  .link2{
+    display: inline-block;
+    margin-top: 25px;
+    position: absolute;
+    left: 93%;
+  }

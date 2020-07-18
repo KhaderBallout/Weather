@@ -1,22 +1,36 @@
 import React from 'react'
-//import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import "./Header.css"
 
 export default function Header(props) {
 
     return (
-        <div className="container">
-            <div className="info">
-            <p>Date/Time: {props.curTime}</p>
-            </div>
-            <div className="info">
-                <h1 >Weather App</h1>
-            </div>
-            <div className="info">
-                <form  onSubmit={(e) => { props.changeLocation(e) }}>
-                    <input type="text" className="regioninput"  placeholder="Select your region" onChange={(e) => { props.changeRegion(e.target.value) }} />
-                </form>
+      <div className="container">
+         <header>
+            <div className="date">
+            <h5>Date|Time: {props.curTime}</h5>
             </div>
 
-        </div>
+            <div className="title">
+                <h1 >Today's Weather</h1>
+            </div>
+        
+            <div className="search">
+                <form onSubmit={(e) => { props.changeLocation(e) }}>
+                    <input type="text" className="regionInput"  placeholder="Select region"
+                     onChange={(e) => { props.changeRegion(e.target.value) }} />
+                </form>
+            </div> 
+
+            <div className="link1" >
+            <Link to="/" style={{ color: '#FFF' }}> HOME </Link>
+            </div>
+
+            <div className="link2" >
+            <Link to="/details" style={{ color: '#FFF' }}> DETAILS </Link>
+            </div>
+         </header>
+
+    </div>
     )
 }
