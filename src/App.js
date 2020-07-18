@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import Axios from 'axios';
-import Header from './Header.js';
-import Middle from './Middle.js';
-import Footer from './Footer.js';
+import Header from './Components/Header'
+import Middle from './Components/Middle.js';
+import Footer from './Components/Footer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Details from './Details.js';
+import Details from './Components/Details.js';
 import {BrowserRouter as Router, Switch,Route,Link , Redirect} from 'react-router-dom';
 
 
