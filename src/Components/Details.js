@@ -11,16 +11,29 @@ class  Details extends Component{
               <div class="cell"> Data  </div>
         </div>
 
+
+        <div class="row">
+            <div class="cell" >Country</div>
+            <div class="cell">{this.props.data.city} </div>
+        </div>
+
+
         <div class="row">
             <div class="cell" >Temperature</div>
             <div class="cell">{this.props.data.temp}&deg; </div>
         </div>
+
 
         <div class="row">
             <div class="cell">Feels Like </div>
             <div class="cell"> {this.props.data.Feels_Like}&deg;</div>
         </div>
 
+        <div class="row">
+            <div class="cell" >Icons</div>
+            <div class="cell"><img className = "mainIcon" src ={`http://openweathermap.org/img/w/${this.props.data.icons}.png`} /> </div>
+        </div>
+        
         <div class="row">
             <div class="cell"> Description </div>
             <div class="cell">{this.props.data.description} </div>

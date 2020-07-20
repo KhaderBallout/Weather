@@ -20,14 +20,14 @@
   
   }
   .middle h3{
-    color: rgb(243, 216, 63);
+    color:#3c3c3c;
     font-size: 30px;
     font-weight: 800;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
   
   }
   .middle span{
-    color:white;
+    color:#3c3c3c;
     font-size: 25px;
     font-weight: 800;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
@@ -45,7 +45,7 @@
     padding: 0px;
     font-size: 45px;
     font-weight: 800;
-    color: rgb(26, 26, 126);
+    color:#3c3c3c;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 
   }
