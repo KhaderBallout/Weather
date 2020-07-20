@@ -1,15 +1,23 @@
 .container{
-    width: 100%;
-    height: 15vh;
+    width: 300px;
+    height: 90px;
     text-align: center;
     justify-content: center;
+   
+
+  }
+  .header{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(26, 26, 78);
+    background-size: cover;
   }
   .title{
     display: inline-block;
     position: absolute;
     left:40%;
     margin-top: 5px;   
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     color: rgb(14, 12, 12);
     font-size: 100px ;
 
@@ -41,19 +49,24 @@
     outline: none;
   }
   ::placeholder {
-    color: rgb(181, 194, 235);
+    color: rgb(228, 231, 241);
     opacity: 1;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+
   }
   
   .link1{
     display: inline-block;
     margin-top: 25px;
     position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     left: 88%;
   }
   .link2{
     display: inline-block;
     margin-top: 25px;
     position: absolute;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     left: 93%;
+    
   }

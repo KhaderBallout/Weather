@@ -5,8 +5,8 @@ import "./Header.css"
 export default function Header(props) {
 
     return (
+        <header className="header">
       <div className="container">
-         <header>
             <div className="date">
             <h5>Date|Time: {props.curTime}</h5>
             </div>
@@ -29,8 +29,9 @@ export default function Header(props) {
             <div className="link2" >
             <Link to="/details" style={{ color: '#FFF' }}> DETAILS </Link>
             </div>
-         </header>
 
     </div>
+    </header>
+
     )
 }

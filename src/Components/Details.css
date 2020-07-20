@@ -6,7 +6,9 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: white;
+    margin: 0 auto;
+    padding: 40px;
+    max-width: 800px;
   }
   
 .details img{
@@ -23,7 +25,6 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
     margin-top: 10px;
-    color: #3c3c3c;
 }
 .city{
     margin: 0px;
@@ -31,3 +32,54 @@
     font-size: 40px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.table{
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    display: table;
+    border-collapse: collapse;
+
+  }
+ 
+.row{
+    display: table-row;
+    background: #bcc3d1;
+    border: 1px solid #dddddd;
+
+  }
+.row:nth-of-type(odd){
+    background: #7b9cff;
+  }
+.row.header{
+    font-weight: 900;
+    background-color: rgb(26, 26, 78);
+}
+
+.row.header{
+    padding: 0;
+    height: 6px;
+  }
+  
+
+.cell{
+    display: none;
+  }
+.cell{
+    margin-bottom: 10px;
+  }
+
+.cell.before{
+    margin-bottom: 3px;
+    content: attr(data-title);
+    min-width: 98px;
+    font-size: 10px;
+    line-height: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: block;
+  }
+
+.cell{
+    padding: 6px 12px;
+    display: table-cell;
+    }

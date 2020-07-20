@@ -1,26 +1,34 @@
 .footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 150px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 160px;
+
+
+}
+
+.day{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: inline-block;
+  width: 20%;
+  height: 170px;
+  text-align: center;
+  justify-content: center;
+  border-right: 2px solid #3c3c3c;
+  border-top: 2px solid #3c3c3c;
+  color:white;
+  font-weight: 800;   
+  font-size: 20px; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
   
-  }
-  
-  .day{
-    display: inline-block;
-    width: 20%;
-    height: 150px;
-    text-align: center;
-    justify-content: center;
-    border-right: 2px solid #3c3c3c;
-    color: rgb(26, 26, 126);
-    font-weight: 800;   
-    font-size: 25px; 
-  }
+}
 
-  p{
-    color: #3c3c3c;
+p{
+  color: rgb(26, 26, 126);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 
 
-  }
+}
