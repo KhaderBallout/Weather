@@ -1,72 +1,64 @@
 .container{
-    width: 300px;
-    height: 90px;
-    text-align: center;
-    justify-content: center;
-   
+  width: 900px;
+  height: 90px;
+  text-align: center;
+  justify-content: center;
 
-  }
-  .header{
-    width: 100%;
-    height: 70px;
-    background-color: rgb(26, 26, 78);
-    background-size: cover;
-  }
-  .title{
-    display: inline-block;
-    position: absolute;
-    left:40%;
-    margin-top: 5px;   
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    color: rgb(14, 12, 12);
-    font-size: 100px ;
+}
+/* .title{
+  display: inline-block;
+  position: absolute;
+  left:40%;
+  margin-top: 0 px;   
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: rgb(156, 67, 67);
+  font-size: 100px ;
+} */
+.date{
+  display: inline-block;
+  position: absolute;
+  left:4%;
+  margin-top: 20px;
+  font-size: 100px ;
+  color: white;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-weight: 400 ;
 
-  }
-  .date{
-    display: inline-block;
-    position: absolute;
-    left:4%;
-    margin-top: 20px;
-    font-size: 100px ;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    font-weight: 400 ;
-
-  }
-    
-  .search{
-    display: inline-block;
-    margin-left: 50px;
-    position: absolute;
-    left: 68%;
-    margin-top: 15px;
-  }
-  .regionInput{
-    background:none;
-    border:none;
-    border-bottom:1px solid #fff;  
-    color: white;
-    outline: none;
-  }
-  ::placeholder {
-    color: rgb(228, 231, 241);
-    opacity: 1;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-
-  }
+}
   
-  .link1{
-    display: inline-block;
-    margin-top: 25px;
-    position: absolute;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    left: 88%;
-  }
-  .link2{
-    display: inline-block;
-    margin-top: 25px;
-    position: absolute;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
-    left: 93%;
-    
-  }
+.search{
+  display: inline-block;
+  margin-left: 50px;
+  position: absolute;
+  left: 68%;
+  margin-top: 15px;
+}
+.regionInput{
+  background:none;
+  border:none;
+  border-bottom:1px solid #fff;  
+  color: white;
+  outline: none;
+}
+::placeholder {
+  color: rgb(228, 231, 241);
+  opacity: 1;
+  font-family: "Arial Black", Gadget, sans-serif;
+
+}
+
+.link1{
+  display: inline-block;
+  margin-top: 25px;
+  position: absolute;
+  font-family: "Arial Black", Gadget, sans-serif;
+  left: 88%;
+}
+.link2{
+  display: inline-block;
+  margin-top: 25px;
+  position: absolute;
+  font-family: "Arial Black", Gadget, sans-serif;
+  left: 93%;
+  
+}

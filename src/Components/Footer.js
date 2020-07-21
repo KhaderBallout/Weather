@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 const Footer = (props) => {
     return(
         <div className ="footer">
+             
             <div className="day">{props.data.data0.day}
             <p>{props.data.data0.temp}&deg;</p>
             <img className="dayIcons" src={`http://openweathermap.org/img/w/${props.data.data0.icons}.png`}/><br></br>
