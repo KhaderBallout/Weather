@@ -1,9 +1,10 @@
 .footer{
+  backdrop-filter: blur(5px);
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 160px;
+  height: 180px;
 
 
 }
@@ -14,21 +15,23 @@
   align-items: center;
   display: inline-block;
   width: 20%;
-  height: 170px;
+  height: 190px;
   text-align: center;
   justify-content: center;
   border-right: 2px solid #3c3c3c;
-  border-top: 2px solid #3c3c3c;
-  color:white;
+  color: #264969;
+  background-color: rgba(137, 140, 148, 0.3);
   font-weight: 800;   
   font-size: 20px; 
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-family: "Arial Black", Gadget, sans-serif;
+  
   
 }
 
 p{
-  color: rgb(26, 26, 126);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  color: white;
+  -webkit-text-stroke: 1px black; 
+  font-family: "Arial Black", Gadget, sans-serif;
 
 
 }
